@@ -3,9 +3,10 @@
   become: True
   tasks:
     - name: Install python pip
-      apt:
-        name: python-pip
+      package:
+        name: "python3-pip"
         state: present
+        update_cache: true
     - name: Install docker
       apt:
         name: docker
@@ -17,7 +18,7 @@
         enabled: yes
     - name: Install docker-py python module
       pip:
-        name: docker-py
+        name: docker
         state: present
     - name: Start the container
       docker_container:
