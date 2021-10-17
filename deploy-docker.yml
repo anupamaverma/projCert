@@ -26,13 +26,13 @@
  
     - name: Install Docker Module for Python
       pip:
-       name: docker
+        name: docker
        
     - name: Pull default Docker image
-	    docker_image:
-       name: "anudevops09/anuapp18"
-	     force: yes
-	     tags: all   
+      docker_image:
+        name: "anudevops09/anuapp18"
+        force: yes
+        tags: all   
  
     - name: Start the container
       docker_container:
