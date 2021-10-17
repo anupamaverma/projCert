@@ -3,7 +3,6 @@
   become: True
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    tag: ${env.BUILD_NUMBER}
   tasks:
     - name: Install aptitude using apt
       apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
@@ -28,6 +27,12 @@
     - name: Install Docker Module for Python
       pip:
        name: docker
+       
+    - name: Pull default Docker image
+	    docker_image:
+       name: "anudevops09/anuapp18"
+	     force: yes
+	     tags: all   
  
     - name: Start the container
       docker_container:
