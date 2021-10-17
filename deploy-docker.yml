@@ -31,5 +31,3 @@
         - "8090:80"
         tty: true
         detach: true
-    - name: reload systemd daemon
-      command: systemctl daemon-reload
