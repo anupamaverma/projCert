@@ -10,7 +10,7 @@
         state: present
         update_cache: true
     - name: Install docker
-      apt:
+      pip:
         name: docker
         state: present
     - name: start docker
