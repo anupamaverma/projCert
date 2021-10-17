@@ -31,7 +31,7 @@
     - name: Start the container
       docker_container:
         name: anuapp
-        image: "anudevops09/anuapp18:" +  "$BUILD_NUMBER"
+        image: "anudevops09/anuapp18":"$BUILD_NUMBER"
         state: started
         published_ports:
           - 0.0.0.0:8080:8080
