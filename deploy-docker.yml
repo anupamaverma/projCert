@@ -3,6 +3,7 @@
   become: True
   vars:
     ansible_python_interpreter: /usr/bin/python3
+    tag_name = $BUILD_NUMBER
   tasks:
     - name: Install aptitude using apt
       apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
@@ -31,7 +32,7 @@
     - name: Start the container
       docker_container:
         name: anuapp
-        image: '"anudevops09/anuapp18":"$BUILD_NUMBER"'
+        image: anudevops09/anuapp18:{{ tag_name }}
         state: started
         published_ports:
           - 0.0.0.0:8080:8080
