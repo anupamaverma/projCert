@@ -30,13 +30,13 @@
        
     - name: Pull default Docker image
       docker_image:
-        repository: "anudevops09/anuapp18"
-        tags: all   
+        repository: anudevops09/anuapp18
+        source: pull   
  
     - name: Start the container
       docker_container:
         name: anuapp
-        image: anudevops09/anuapp18:{{ tag }}
+        repository: anudevops09/anuapp18
         state: started
         published_ports:
           - 0.0.0.0:8080:8080
