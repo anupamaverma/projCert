@@ -23,7 +23,7 @@
         name: docker-py
         state: present
     - name: Start the container
-      docker_container
+      docker_container:
         name: anuapp
         image: "anudevops09/anuapp18:$BUILD_NUMBER"
         state: started
@@ -31,3 +31,5 @@
           - "8080:80"
           tty: true
           detach: true
+   - name: reload systemd daemon
+     command: systemctl daemon-reload
