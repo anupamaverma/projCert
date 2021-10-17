@@ -3,7 +3,7 @@
   become: True
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    tag: "$env.BUILD_NUMBER" 
+    tag: ${env.BUILD_NUMBER}
   tasks:
     - name: Install aptitude using apt
       apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
