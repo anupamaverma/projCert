@@ -30,8 +30,7 @@
        
     - name: Pull default Docker image
       docker_image:
-        name: "anudevops09/anuapp18"
-        force: yes
+        repository: "anudevops09/anuapp18"
         tags: all   
  
     - name: Start the container
