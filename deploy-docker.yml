@@ -27,9 +27,9 @@
         name: anuapp
         image: "anudevops09/anuapp18:$BUILD_NUMBER"
         state: started
-        published_ports:
-          - "8080:80"
-          tty: true
-          detach: true
+        ports:
+        - "8080:80"
+        tty: true
+        detach: true
    - name: reload systemd daemon
      command: systemctl daemon-reload
