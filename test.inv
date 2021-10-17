@@ -1,5 +1,5 @@
 [test]
-172.31.30.157 ansible_user=ubuntu
+172.31.30.157
 [test:vars]
 ansible_python_interpreter=/usr/bin/python3
 
